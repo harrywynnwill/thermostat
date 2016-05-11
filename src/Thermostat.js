@@ -41,3 +41,15 @@ function Thermostat(){
   Thermostat.prototype.reset = function () {
     this.temperature = DEFAULT_TEMP;
   };
+
+  Thermostat.prototype.usageMonitor = function () {
+    if(this.temperature < 18 ){
+      return ('green');
+    }
+    if(this.temperature < 25 ){
+      return ('yellow');
+    }
+    else{
+      return 'red';
+    }
+  };

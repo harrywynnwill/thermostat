@@ -63,5 +63,22 @@ describe('Thermostat', function(){
       expect(thermostat.temperature).toEqual(20);
     });
   });
+  describe('changes the colour on energy usage', function(){
+    it('returns green if less than 18', function(){
+      for(i=0; i <3; i++ ){
+        thermostat.decreaseTemperature();
+      }
+      expect(thermostat.usageMonitor()).toEqual('green');
+    });
+    it('returns yellow if less than 25', function(){
 
+      expect(thermostat.usageMonitor()).toEqual('yellow');
+    });
+    it('returns red if more than 25', function(){
+      for(i=0; i <6; i++ ){
+        thermostat.increaseTemperature();
+      }
+      expect(thermostat.usageMonitor()).toEqual('red');
+    });
+  });
 });
