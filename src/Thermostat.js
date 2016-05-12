@@ -3,6 +3,7 @@ function Thermostat(){
   DEFAULT_TEMP = 20;
   MINIMUM_TEMP = 10;
   MAXIMUM_TEMP = 32;
+
   POWER_SAVING_MAX = 25;
 
   this.temperature = DEFAULT_TEMP;
@@ -44,12 +45,12 @@ function Thermostat(){
 
   Thermostat.prototype.usageMonitor = function () {
     if(this.temperature < 18 ){
-      return ('green');
+      return ('low-usage');
     }
     if(this.temperature < 25 ){
-      return ('yellow');
+      return ('medium-usage');
     }
     else{
-      return 'red';
+      return 'high-usage';
     }
   };

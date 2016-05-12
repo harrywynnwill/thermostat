@@ -68,17 +68,17 @@ describe('Thermostat', function(){
       for(i=0; i <3; i++ ){
         thermostat.decreaseTemperature();
       }
-      expect(thermostat.usageMonitor()).toEqual('green');
+      expect(thermostat.usageMonitor()).toEqual('low-usage');
     });
     it('returns yellow if less than 25', function(){
 
-      expect(thermostat.usageMonitor()).toEqual('yellow');
+      expect(thermostat.usageMonitor()).toEqual('medium-usage');
     });
     it('returns red if more than 25', function(){
       for(i=0; i <6; i++ ){
         thermostat.increaseTemperature();
       }
-      expect(thermostat.usageMonitor()).toEqual('red');
+      expect(thermostat.usageMonitor()).toEqual('high-usage');
     });
   });
 });
